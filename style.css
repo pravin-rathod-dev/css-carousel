@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    background-color: #201515;
+}
+
+.scene{
+    height: 100vh;
+    width: 100vw;
+    perspective: 1200px;
+    overflow: hidden;
+}
+
+.carousel{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: animate-carousel 20s linear infinite;
+}
+.carousel:has(.items:hover){
+    animation-play-state: paused;
+}
+.items{
+    height: 30%;
+    width: 10%;
+    position: absolute;
+}
+
+.items img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.items:nth-child(1){
+    transform: rotateY(0deg) translateZ(350px);
+}
+.items:nth-child(2){
+    transform: rotateY(45deg) translateZ(350px);
+}
+.items:nth-child(3){
+    transform: rotateY(90deg) translateZ(350px);
+}
+.items:nth-child(4){
+    transform: rotateY(135deg) translateZ(350px);
+}
+.items:nth-child(5){
+    transform: rotateY(180deg) translateZ(350px);
+}
+.items:nth-child(6){
+    transform: rotateY(225deg) translateZ(350px);
+}
+.items:nth-child(7){
+    transform: rotateY(270deg) translateZ(350px);
+}
+.items:nth-child(8){
+    transform: rotateY(315deg) translateZ(350px);
+}
+
+@keyframes animate-carousel {
+    from{
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(360deg);
+    }
+}
